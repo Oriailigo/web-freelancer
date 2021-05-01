@@ -9,7 +9,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Hoja de estilos-->
+    <!-- Hoja de estilos Nota: las librerias deben escribirse primero-->
+    <!--Fuentes de texto: google fonts-->
+    <link rel="preload" href="css/normalize.css">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Mis css-->
     <link rel="preload" href="css/style.css" as="style">
     <link href="css/style.css" rel="stylesheet">
     <!-- Esto es lo que ve el navegador-->
@@ -23,24 +30,25 @@
     <!-- La colocacion de los h1 hasta h6 es para que el navegador sepa que apartir del h1 es el mas importante-->
     <!-- No repites H1, los demas si se pueden repetir-->
     <header>
-        <h1>
-            Oriana Ailigo Freelancer
+        <h1 class="titulo">
+            Oriana Ailigo <span> Freelancer </span>
         </h1>
     </header>
     <!--Colocar el menu de navegacion donde dentro de la
     etiqueta a se coloca el atributo de href-->
-    <nav>
-        <!--Para no hacer referencia a nada coloc href="#"-->
-        <a href="#">Inicio</a>
-        <a href="#">Sobre mi</a>
-        <a href="#">Clientes</a>
-        <a href="#">Contacto</a>
+    <div class="nav-background">
+        <nav class="navegacion-principal contenedor">
+            <!--Para no hacer referencia a nada coloc href="#"-->
+            <a href="#">Inicio</a>
+            <a href="#">Sobre mi</a>
+            <a href="#">Clientes</a>
+            <a href="#">Contacto</a>
 
-        <!-- <img src="/image/hero.jpg"> 
+            <!-- <img src="/image/hero.jpg"> 
         Es mejor tener una imagen como fondo para poder colocar texto encima
         -->
-    </nav>
-
+        </nav>
+    </div>
     <!--Nuevo contenido descripcion de lo que vas a ver en la pagina el objetivo-->
     <section>
         <h2> Diseño y Desarrollo Web Freelancer</h2>

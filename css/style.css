@@ -1,3 +1,96 @@
-h1 {
-    text-align: center;
+:root {
+    --blanco: #fffffF;
+    --oscuro: #000000;
+    --primario: #fde400;
+    --azul: #567add;
+    --gris: #8d8787;
 }
+
+
+/* paleta de colores*/
+
+Html {
+    font-size: 62.5%;
+}
+
+Body {
+    font-size: 16px;
+    /*1rem=10px */
+    font-family: 'Krub', sans-serif;
+    /*quiero que toda la pagina tenga la misma fuente de letra*/
+}
+
+
+/*html y body le cambie el tamaño para poder usar rem */
+
+.titulo {
+    text-align: center;
+    font-size: 3.8rem;
+}
+
+.titulo span {
+    font-size: 2rem;
+}
+
+.contenedor {
+    /* Voy a centrar todos los elementos de la pagina */
+    max-width: 120rem;
+    /* margen como un reloj
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    */
+    margin: 0 auto 0 auto;
+}
+
+.nav-background {
+    background-color: var(--azul);
+}
+
+.navegacion-principal {
+    /*flex y justyfy =separo los elementos de la misma fila*/
+    display: flex;
+    /* le agrego flex direcion en column 
+    para que se relacione con el media query */
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* responsive uso de media querys*/
+
+
+/* Cambia si es de <=768px es lo contrario a lo
+que se piensa*/
+
+@media (min-width:768px) {
+    .navegacion-principal {
+        /*cambio el flex*/
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion-principal a {
+    color: var(--blanco);
+    font-size: 2rem;
+    font-weight: 700;
+    /* font-weigh puede tener estos valores: 400 y 700 */
+    text-decoration: none;
+    /* decoration: Elimino las lineas de los enlaces*/
+    padding: 1rem;
+}
+
+
+/*hover le da efecto al enlace */
+
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+
+/* Cambia si es de 768px en adelante*/
+
+@media (min-width:768px) {}
