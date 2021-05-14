@@ -15,6 +15,20 @@ Html {
     font-size: 62.5%;
     /* que todos tengan esta caja*/
     box-sizing: border-box;
+    /*agregar scroll*/
+    scroll-snap-type: y mandatory;
+}
+
+
+/*scroll snap*/
+
+.servicios,
+.navegacion-principal,
+.formulario {
+    /*que se detenga siempre en
+    servicios*/
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
 }
 
 
@@ -226,12 +240,10 @@ boton quiero que aparezca una mano*/
 
 /*servicio*/
 
-
-/* display:flexbox o display:grid 
-son lo mismo*/
-
 @media (min-width: 768px) {
     .servicios {
+        /* display:flexbox o display:grid 
+son lo mismo*/
         display: grid;
         /*crear tres comlumnas
         en la misma fila*/
