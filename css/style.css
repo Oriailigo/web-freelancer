@@ -1,0 +1,385 @@
+:root {
+    --blanco: #fffffF;
+    --oscuro: #050505;
+    --primario: #EFD00B;
+    --azul: #0F5085;
+    --celeste: #52a3e6;
+    --gris: #363030;
+    --grisClaro: #dfdfdf;
+}
+
+
+/* paleta de colores*/
+
+Html {
+    font-size: 62.5%;
+    /* que todos tengan esta caja*/
+    box-sizing: border-box;
+    /*agregar scroll*/
+    scroll-snap-type: y mandatory;
+}
+
+
+/*scroll snap*/
+
+.servicios,
+.navegacion-principal,
+.footer,
+.formulario {
+    /*que se detenga siempre en
+    servicios*/
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+
+/* //////////////////////////////*/
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+/* //////////////////////////////*/
+
+
+/*Global*/
+
+Body {
+    font-size: 16px;
+    /*1rem=10px */
+    font-family: 'Krub', sans-serif;
+    /*quiero que toda la pagina tenga la misma fuente de letra*/
+    /*color de fondo*/
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+}
+
+
+/*sombra en la pagina sacado de css smatic*/
+
+.sombra {
+    -webkit-box-shadow: 0px 7px 18px 4px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 0px 7px 18px 4px rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 7px 18px 4px rgba(0, 0, 0, 0.38);
+}
+
+
+/*html y body le cambie el tamaño para poder usar rem */
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+.titulo span {
+    font-size: 2rem;
+}
+
+.contenedor {
+    /* Voy a centrar todos los elementos de la pagina */
+    max-width: 120rem;
+    /* margen como un reloj
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    */
+    margin: 0 auto 0 auto;
+    /* alinear central y verticalmente */
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem; */
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.nav-background {
+    background-color: var(--azul);
+}
+
+.navegacion-principal {
+    /*flex y justyfy =separo los elementos de la misma fila*/
+    display: flex;
+    /* le agrego flex direcion en column 
+    para que se relacione con el media query */
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* responsive uso de media querys*/
+
+
+/* Cambia si es de <=768px es lo contrario a lo
+que se piensa*/
+
+@media (min-width:768px) {
+    .navegacion-principal {
+        /*cambio el flex*/
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion-principal a {
+    color: var(--blanco);
+    font-size: 2rem;
+    font-weight: 700;
+    /* font-weigh puede tener estos valores: 400 y 700 */
+    text-decoration: none;
+    /* decoration: Elimino las lineas de los enlaces*/
+    padding: 1rem;
+}
+
+
+/*hover le da efecto al enlace */
+
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+
+/* Cambia si es de 768px en adelante*/
+
+@media (min-width:768px) {}
+
+
+/*colocamos la imagen de fondo */
+
+.hero {
+    background-image: url(../image/hero.jpg);
+    background-repeat: no-repeat;
+    /*repeat: Que no se repita imagen de fondo */
+    background-size: cover;
+    /* size: quiero que ocupe toda la pantalla la imagen de fondo */
+    /*height y padin: Acomodar mejor la imagen engordar */
+    height: 410px;
+    /*padding: 20px;   elimino el padin para oscurecer la imagen*/
+    /*el padre es relativo */
+    position: relative;
+}
+
+.contenido-hero {
+    text-align: center;
+    /*el hijo es absoluto */
+    position: absolute;
+    /*colocando color y tamaño */
+    background-color: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: 100%;
+    /* centrar en el centro de la imagen con estos 4 lineas */
+    /* alinear central y verticalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2 {
+    color: var(--blanco);
+}
+
+.contenido-hero p2 {
+    color: var(--blanco);
+}
+
+.boton {
+    /*Forma del boton*/
+    background-color: var(--azul);
+    color: var(--blanco);
+    padding: 1rem 3rem 1rem 3rem;
+    margin-top: 1rem;
+    /*agrandar letra*/
+    font-size: 2rem;
+    /*sacar subrayado*/
+    text-decoration: none;
+    /* colocar negrita*/
+    font-weight: bolder;
+    /*hacer medio redondo*/
+    border-radius: .5rem;
+    /*estirar y centrar texto*/
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+
+
+/*cuando posiciono el mause en el 
+boton quiero que aparezca una mano*/
+
+.boton :hover {
+    cursor: pointer;
+}
+
+
+/* Cambia si es de 768px en adelante*/
+
+@media (min-width:768px) {
+    .boton {
+        width: auto;
+    }
+}
+
+
+/*servicio*/
+
+@media (min-width: 768px) {
+    .servicios {
+        /* display:flexbox o display:grid 
+son lo mismo*/
+        display: grid;
+        /*crear tres comlumnas
+        en la misma fila*/
+        /* grid-template-columns: 300px 300px 300px; */
+        /*si quiero que tome el 100%*/
+        /* grid-template-columns: 33.3% 33.3% 33.3%; */
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        grid-template-columns: repeat(3, 1fr);
+        /*Agregar margen entre columnas*/
+        column-gap: 1rem;
+    }
+}
+
+.servicio {
+    /*centrar el circulo ya creado*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3 {
+    color: var(--celeste);
+    font-weight: normal;
+}
+
+.servicio p {
+    line-height: 2;
+    text-align: center;
+}
+
+.servicio .icono {
+    /*dar forma de circulo
+    con fondo amarillo*/
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    /*acomodar el circulo que
+    encierre a los iconos*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/*contacto*/
+
+.formulario {
+    background-color: var(--gris);
+    width: min(60rem, 100%);
+    /*utiliza el valor mas pequeño*/
+    /*centrar fondo gris*/
+    margin: 0 auto;
+    /*espacio hacia adentro*/
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: var(--primario);
+}
+
+.formulario fieldset {
+    /*eliminar la linea 
+    de por defecto del 
+    leyenda*/
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos {
+        display: grid;
+        /*creo dos columnas en la misma fila*/
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
+}
+
+.campo:nth-child(3),
+.campo:nth-child(4) {
+    display: grid;
+    /*creo dos columnas en la misma fila*/
+    grid-column: 1/3;
+}
+
+.campo textarea {
+    height: 20rem;
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.cambio-input {
+    /*tomar todo el espacio disponible*/
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+}
+
+.enviar {
+    width: 100%;
+}
+
+.derecha {
+    justify-content: flex-end;
+}
+
+.flex {
+    display: flex;
+}
+
+@media (min-width: 768px) {
+    .enviar {
+        width: auto;
+    }
+}
+
+
+/*footer*/
+
+.footer {
+    text-align: center;
+}
