@@ -369,6 +369,7 @@ son lo mismo*/
 
 .flex {
     display: flex;
+    margin-top: 4rem;
 }
 
 @media (min-width: 768px) {
